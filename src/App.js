@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import {Button,CircularProgress ,Input , Alert,
+  AlertIcon,
+  AlertTitle,
+  AlertDescription,
+  CloseButton,
+  Skeleton, Stack} from '@chakra-ui/react'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <Button colorScheme='blue'>Button</Button>
+    <CircularProgress isIndeterminate color='green.300' />
+    <Input placeholder='Basic usage' />
+    <Alert status='error'>
+  <AlertIcon />
+  <AlertTitle mr={2}>Your browser is outdated!</AlertTitle>
+  <AlertDescription>Your Chakra experience may be degraded.</AlertDescription>
+  <CloseButton position='absolute' right='8px' top='8px' />
+</Alert>
+<Stack>
+  <Skeleton height='20px' />
+  <Skeleton height='20px' />
+  <Skeleton height='20px' />
+  </Stack>
+    </>
   );
 }
 
